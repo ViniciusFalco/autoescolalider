@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 76px;
+  }
+
+  body {
+    @apply m-0 bg-brand-cream text-brand-black antialiased;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: #9bf521;
+    color: #052f20;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Archivo Black', Impact, 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+  }
+
+  .nav-link {
+    @apply text-sm font-black uppercase tracking-[0.12em] text-brand-dark transition hover:text-brand-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

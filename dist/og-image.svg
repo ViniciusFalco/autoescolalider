@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="48" fill="#004B2F"/>
+  <rect x="48" y="48" width="1104" height="534" rx="40" fill="url(#paint0_linear)"/>
+  <circle cx="1020" cy="128" r="96" fill="#8BEA1D" fill-opacity="0.18"/>
+  <circle cx="1040" cy="470" r="150" fill="#E53B2C" fill-opacity="0.18"/>
+  <circle cx="156" cy="126" r="120" fill="#8BEA1D" fill-opacity="0.22"/>
+  <circle cx="214" cy="472" r="180" fill="#ffffff" fill-opacity="0.08"/>
+  <text x="108" y="194" fill="white" font-size="56" font-family="Arial, sans-serif" font-weight="700">Autoescola Líder Cataguases</text>
+  <text x="108" y="256" fill="#D8FFB1" font-size="28" font-family="Arial, sans-serif" font-weight="700">Tire sua CNH Categoria A ou B</text>
+  <text x="108" y="320" fill="white" font-size="24" font-family="Arial, sans-serif">WhatsApp: (32) 3421-7319</text>
+  <text x="108" y="364" fill="white" font-size="24" font-family="Arial, sans-serif">Rua Ananísia Fonseca, 95, Centro, Cataguases - MG</text>
+  <rect x="108" y="420" width="250" height="68" rx="34" fill="#8BEA1D"/>
+  <text x="162" y="463" fill="#06110B" font-size="24" font-family="Arial, sans-serif" font-weight="700">Chamar no WhatsApp</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="48" y1="48" x2="1152" y2="582" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C6F43"/>
+      <stop offset="1" stop-color="#01361F"/>
+    </linearGradient>
+  </defs>
+</svg>
