@@ -1,8 +1,23 @@
+import { useRef, useState } from 'react';
 import { contactLinks } from '../content';
-import { WhatsAppIcon } from './icons';
+import { SoundIcon, WhatsAppIcon } from './icons';
 import { ButtonLink } from './ui';
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  function toggleSound() {
+    const nextMutedState = !isMuted;
+
+    if (videoRef.current) {
+      videoRef.current.muted = nextMutedState;
+      if (!nextMutedState) void videoRef.current.play();
+    }
+
+    setIsMuted(nextMutedState);
+  }
+
   return (
     <section id="inicio" className="relative overflow-hidden bg-brand-dark text-white">
       <div className="absolute inset-0 bg-dot-grid bg-[length:17px_17px] opacity-50" />
@@ -30,9 +45,10 @@ export function Hero() {
         <div className="relative min-h-[52svh] px-4 pb-5 sm:px-6 lg:min-h-full lg:px-8 lg:py-8">
           <div className="h-full min-h-[52svh] overflow-hidden rounded-[2.5rem_2.5rem_1rem_1rem] border-4 border-white/10 bg-brand-green lg:rounded-[3rem]">
             <video
+              ref={videoRef}
               className="h-full w-full object-cover object-center"
               autoPlay
-              muted
+              muted={isMuted}
               loop
               playsInline
               preload="metadata"
@@ -42,8 +58,20 @@ export function Hero() {
               <source src="/videos/videohero.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="absolute bottom-10 left-8 rounded-full bg-white px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-brand-dark shadow-card sm:left-10 lg:bottom-14 lg:left-14">
-            23 anos de história
+          <div className="absolute bottom-10 left-8 flex items-center gap-2 sm:left-10 lg:bottom-14 lg:left-14">
+            <div className="rounded-full bg-white px-4 py-3 text-[10px] font-black uppercase tracking-[0.16em] text-brand-dark shadow-card sm:px-5 sm:text-xs sm:tracking-[0.2em]">
+              23 anos de história
+            </div>
+            <button
+              type="button"
+              onClick={toggleSound}
+              aria-pressed={!isMuted}
+              aria-label={isMuted ? 'Ativar som do vídeo' : 'Silenciar vídeo'}
+              className="inline-flex min-h-10 items-center gap-2 rounded-full bg-brand-lime px-4 py-3 text-[10px] font-black uppercase tracking-[0.14em] text-brand-dark shadow-lime transition hover:bg-brand-limeLight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:text-xs"
+            >
+              <SoundIcon muted={isMuted} className="h-4 w-4 shrink-0" />
+              <span>{isMuted ? 'Ativar som' : 'Silenciar'}</span>
+            </button>
           </div>
         </div>
       </div>
